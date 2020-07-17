@@ -53,6 +53,16 @@ class Auth extends CI_Controller {
 		//validate form input
 		$this->form_validation->set_rules('identity', 'Identity', 'required');
 		$this->form_validation->set_rules('password', 'Password', 'required');
+		$this->form_validation->set_rules('tahunajaran', 'Tahun Ajaran',
+			array(
+				"required",
+				array("fHarusIsi", function($varx) {return $varx != "Tahun Ajaran";})
+			),
+			array(
+				"fHarusIsi" => "Tahun Ajaran harus terisi !"
+			)
+			);
+
 
 		if ($this->form_validation->run() == true)
 		{
