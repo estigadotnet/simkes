@@ -34,13 +34,15 @@
                 <tr>
                   <td><?php echo ++$start ?></td>
                   <td><?php echo $tahunajaran->tahunajaran ?></td>
-                  <td style="text-align:center" width="140px">
+                  <td style="text-align:center" width="210px">
                     <?php
                     echo anchor(site_url('tahunajaran/read/'.$tahunajaran->idtahunajaran),'<i class="fa fa-eye"></i>',array('title'=>'detail','class'=>'btn btn-primary btn-sm'));
                     echo '  ';
                     echo anchor(site_url('tahunajaran/update/'.$tahunajaran->idtahunajaran),'<i class="fa fa-edit"></i>',array('title'=>'edit','class'=>'btn btn-warning btn-sm'));
                     echo '  ';
                     echo anchor(site_url('tahunajaran/delete/'.$tahunajaran->idtahunajaran),'<i class="fa fa-trash"></i>','title="delete" class="btn btn-danger btn-sm" onclick="javasciprt: return confirm(\'Are You Sure ?\')"');
+                    echo '  ';
+                    echo anchor(site_url('tahunajaran/aktifkan/'.$tahunajaran->idtahunajaran),'<i class="fa fa-check"></i>',array('title'=>'aktifkan','class'=>'btn btn-primary btn-sm'));
                     ?>
                   </td>
                 </tr>

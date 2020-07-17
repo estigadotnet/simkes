@@ -65,6 +65,7 @@ class Auth extends CI_Controller {
 				//if the login is successful
 				//redirect them back to the home page
 				$this->session->set_flashdata('message', $this->ion_auth->messages());
+				$this->session->set_flashdata("tahunajaran", $this->input->post("tahunajaran"));
 				redirect('home', 'refresh');
 			}
 			else
@@ -94,6 +95,10 @@ class Auth extends CI_Controller {
                                 'class' => 'form-control',
                                 'placeholder'=>'Password',
 			);
+
+			$this->load->model("ion_auth_model");
+			$query = $this->ion_auth_model->get_tahunajaran();
+			$this->data["tahunajaran"] = $query;
 
 			$this->_render_page('auth/login3', $this->data);
 		}

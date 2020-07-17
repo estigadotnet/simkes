@@ -46,6 +46,16 @@
             </div>
           </div>
         </div>
+        <div class="input-group mb-3">
+          <select class="custom-select" id="inputGroupSelect01" name="tahunajaran">
+            <option selected>Tahun Ajaran</option>
+            <?php foreach ($tahunajaran->result() as $row) { ?>
+              <option  value="<?php echo $row->tahunajaran; ?>">
+              <?php echo $row->tahunajaran;?>
+              </option>
+            <?php } ?>
+          </select>
+        </div>
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">

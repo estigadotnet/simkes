@@ -168,6 +168,12 @@ class Ion_auth_model extends CI_Model
 	 **/
 	protected $_cache_groups = array();
 
+	public function get_tahunajaran() {
+		//$this->db->query("select tahunajaran from t001_tahunajaran order by idtahunajaran desc");
+		$query = $this->db->query("select tahunajaran from t001_tahunajaran order by tahunajaran desc");
+		return $query;
+	}
+
 	public function __construct()
 	{
 		parent::__construct();
