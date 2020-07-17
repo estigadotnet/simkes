@@ -41,7 +41,8 @@ class Auth extends CI_Controller {
 			}
 
 			//$this->_render_page('auth/index', $this->data);
-			$this->template->load('template','auth/index',$this->data);
+			//$this->template->load('template','auth/index',$this->data);
+			$this->template->load('template_form',"menu",'auth/index',$this->data);
 		}
 	}
 
